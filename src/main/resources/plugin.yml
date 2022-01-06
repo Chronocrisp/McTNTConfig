@@ -1,0 +1,50 @@
+name: ConfigureTNT
+version: ${project.version}
+main: de.kunst.PluginLauncher
+api-version: 1.17
+authors: [ Chronocrisp ]
+description: A plugin that provides commands to configure TNT
+
+commands:
+  tntConfigs:
+    permission: op
+    description: "Displays current TNT properties such as fusetick etc."
+    usage: "/tntConfigs"
+
+  restoreDefaultTNTConfig:
+    permission: op
+    description: "Restores the minecraft default configurations for TNT"
+    usage: "/restoreDefaultTNTConfig"
+
+  recordTNTDamage:
+    permission: op
+    description: "Records any destruction by TNT"
+    usage: "/recordTNTDamage <true/false>"
+
+  clearBlockFile:
+    permission: op
+    description: "Clears the saved damages that TNT caused"
+
+  restoreTNTDamage:
+    permission: op
+    description: "Restores any damages left by TNT"
+    usage: "/restoreTNTDamage <name of world>"
+
+  setTNTExplosionRadius:
+    permission: op
+    description: "Sets explosion radius"
+    usage: "setTNTExplosionRadius <float>"
+    aliases: ["tntradius"]
+
+  setTNTFuseTicks:
+    permission: op
+    description: "Set the ticks needed for TNT to explode"
+    usage: "setDisableTNT <false/true>"
+    aliases: ["tntticks"]
+
+  setDisableTNT:
+    permission: op
+    description: "False enables TNT, true disables TNT"
+    usage: "setDisableTNT <false/true>"
+    aliases: ["dtnt"]
+
