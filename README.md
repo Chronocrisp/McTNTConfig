@@ -2,19 +2,19 @@ commands:
  setDisableTNT:
    False enables TNT, true disables TNT  
    permission: op  
-   usage: "setDisableTNT <false/true>"  
+   usage: "/setDisableTNT <false/true>"  
    aliases: ["dtnt"]  
 
   setTNTExplosionRadius:
     Sets explosion radius  
     permission: op  
-    usage: "setTNTExplosionRadius <float>"  
+    usage: "/setTNTExplosionRadius <float>"  
     aliases: ["tntradius"]  
 
   setTNTFuseTicks:
     Sets the ticks needed for TNT to explode  
     permission: op  
-    usage: "setDisableTNT <false/true>"  
+    usage: "/setDisableTNT <false/true>"  
     aliases: ["tntticks"]  
 
   tntConfigs:
