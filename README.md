@@ -37,6 +37,6 @@ commands:
     permission: op  
 
   restoreTNTDamage:
-    Restores any damages left by TNT  
+    Restores any damages left by TNT (if recorded)  
     permission: op  
     usage: "/restoreTNTDamage <name of world>"  
