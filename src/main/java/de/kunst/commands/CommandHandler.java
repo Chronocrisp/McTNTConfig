@@ -1,7 +1,6 @@
 package de.kunst.commands;
 
 import org.bukkit.ChatColor;
-import org.bukkit.World;
 import org.bukkit.block.data.BlockData;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
@@ -87,7 +86,7 @@ public class CommandHandler implements TabExecutor {
                             final String[] xyz = scanner.nextLine().split("([ ])"); // x y z
                             //Replaces destroyed blocks
                             Objects.requireNonNull(sender.getServer().getWorld(worldName), worldName)
-                                    .setBlockData(Integer.parseInt(xyz[0]),Integer.parseInt(xyz[1]),Integer.parseInt(xyz[2]),data);
+                                    .getBlockAt(Integer.parseInt(xyz[0]),Integer.parseInt(xyz[1]),Integer.parseInt(xyz[2])).setBlockData(data, true);
                         }
                     } catch (IOException e){
                         logger.warning("Failed to restore TNT damage: " + e.toString());
@@ -137,7 +136,7 @@ public class CommandHandler implements TabExecutor {
     public List<String> onTabComplete(CommandSender sender, Command command, String alias, String[] args) {
         switch (command.getName()) {
             case "restoreTNTDamage":
-                return sender.getServer().getWorlds().stream().map(World::getName).collect(Collectors.toList());
+                return sender.getServer().getWorlds().stream().map(it -> it.getWorldFolder().getName()).collect(Collectors.toList());
 
             case "recordTNTDamage":
             case "setDisableTNT":

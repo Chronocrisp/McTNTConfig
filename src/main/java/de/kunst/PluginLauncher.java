@@ -79,6 +79,5 @@ public final class PluginLauncher extends JavaPlugin {
         public void onEvent(ExplosionPrimeEvent event) {
             event.setCancelled(commandHandler.getIsTNTDisabled() && event.getEntity() instanceof TNTPrimed);
         }
-
     }
 }
